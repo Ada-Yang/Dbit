@@ -4,13 +4,13 @@
 namespace sloth {
 
     export enum PWMChn {
-        //% blockId="Right_leg" block="右侧腿"
+        //% blockId="Right_leg" block="right leg"
         Right_Leg = 8,
-        //% blockId="Right_Foot" block="右侧脚尖"
+        //% blockId="Right_Foot" block="right feet"
         Right_Foot = 9,
-        //% blockId="Left_Foot" block="左侧脚尖"
+        //% blockId="Left_Foot" block="left feet"
         Left_Foot = 10,
-        //% blockId="Left_leg" block="左侧腿"
+        //% blockId="Left_leg" block="left leg"
         Left_Leg = 11,
         CH1 = 0,
         CH2 = 1,
@@ -187,35 +187,35 @@ namespace sloth {
     ]
 
     export enum action_name {
-        //% blockId="walk" block="前进"
+        //% blockId="walk" block="go ahead"
         walk = 0,
-        //% blockId="walk_backward" block="后退"
+        //% blockId="walk_backward" block="back"
         walk_backward = 1,
-        //% blockId="turn_left" block="左转"
+        //% blockId="turn_left" block="turn left"
         turn_left = 2,
-        //% blockId="turn_right" block="右转"
+        //% blockId="turn_right" block="turn right"
         turn_right = 3,
-        //% blockId="moonwalk_left" block="太空步左转"
+        //% blockId="moonwalk_left" block="turn left with moonwalk"
         moonwalk_left = 4,
-        //% blockId="moonwalk_right" block="太空步右转"
+        //% blockId="moonwalk_right" block="turn right with moonwalk"
         moonwalk_right = 5,
-        //% blockId="shake_left" block="左侧摇摆"
+        //% blockId="shake_left" block="shake the left leg"
         shake_left = 6,
-        //% blockId="shake_right" block="右侧摇摆"
+        //% blockId="shake_right" block="shake the right leg"
         shake_right = 7,
-        //% blockId="go_up_and_down" block="上上下下"
+        //% blockId="go_up_and_down" block="up and down"
         go_up_and_down = 8,
-        //% blockId="swing" block="摇摆不定"
+        //% blockId="swing" block="swing"
         swing = 9,
-        //% blockId="walk_boldly" block="大步前进"
+        //% blockId="walk_boldly" block="stride forward"
         walk_boldly = 10,
-        //% blockId="walk_backward_boldly" block="大步后退"
+        //% blockId="walk_backward_boldly" block="stride back"
         walk_backward_boldly = 11,
-        //% blockId="walk_shyly" block="细步前进"
+        //% blockId="walk_shyly" block="small step forward"
         walk_shyly = 12,
-        //% blockId="walk_backward_shyly" block="细步后退"
+        //% blockId="walk_backward_shyly" block="small step back"
         walk_backward_shyly = 13,
-        //% blockId="big_swing" block="大浪潮"
+        //% blockId="big_swing" block="big wave"
         big_swing = 14
     }
 
@@ -335,7 +335,7 @@ namespace sloth {
         left_leg = CH9,
        other channels for DIY
     */
-    //% blockId=sloth_set_pwm block="设置PWM通道 %channel|开: %on|关: %off"
+    //% blockId=sloth_set_pwm block="setPWMchannel %channel|open: %on|off: %off"
     //% advanced=true
     //% weight=20
     //% on.min=0 on.max=4095
@@ -364,7 +364,7 @@ namespace sloth {
         left_foot = CH8,
         left_leg = CH9
     */
-    //% blockId=sloth_servo_write block="设置舵机 %channel|角度 %degree"
+    //% blockId=sloth_servo_write block="set servo %channel|degree %degree"
     //% advanced=true
     //% weight=50
     //% degree.min=0 degree.max=180
@@ -382,7 +382,7 @@ namespace sloth {
      * Servo move, input 4 elements array, to move all servo
      * @param speed ; eg: 50
     */
-    //% blockId=sloth_servo_write_all block="设置所有舵机角度 %angles"
+    //% blockId=sloth_servo_write_all block="set the degrees of all servos %angles"
     //% weight=30
     //% advanced=true
     //% angles.min=0 angles.max=180
@@ -396,7 +396,7 @@ namespace sloth {
      * Servo move, input 4 elements array, to move all servo
      * @param speed ; eg: 50
     */
-    //% blockId=sloth_servo_move block="设置舵机移动到 %target| %speed|dps"
+    //% blockId=sloth_servo_move block="set the servo rotate %target| %speed|dps"
     //% weight=40
     //% advanced=true
     //% speed.min=1 speed.max=100
@@ -438,7 +438,7 @@ namespace sloth {
     /**
      * Stand still: 4 servos turn to 90 degrees
      */
-    //% blockId=sloth_stand_still block="站着"
+    //% blockId=sloth_stand_still block="stand up"
     //% weight=100 blockGap=10
     export function stand_still(): void {
         let servo_targets = [0, 0, 0, 0];
@@ -448,7 +448,7 @@ namespace sloth {
     /**
      * Set offset for 4 servos: you can use block "calibrate" on "startup", to get the value to fill in the blank
      */
-    //% blockId=sloth_set_offset block="设置偏移量 | 右侧腿 %o3| 左侧腿 %o1| 右侧脚尖 %o4| 左侧脚尖 %o2"
+    //% blockId=sloth_set_offset block="set the offset value | right leg %o3| left leg %o1| right feet %o4| left feet %o2"
     //% weight=45
     //% o1.min=-30 o1.max=30
     //% o2.min=-30 o2.max=30
@@ -464,7 +464,7 @@ namespace sloth {
      * Set gesture for sloth:bit: fill in the blank to drive servo turn the angle and show gesture for you. This block 
      * is just for advance, pay attention to set value, and provide blocking protection to the servos
      */
-    //% blockId=sloth_set_gesture block="设置姿态 | 左侧腿 %o1| 左侧脚尖 %o2| 右侧腿 %o3| 右侧脚尖 %o4"
+    //% blockId=sloth_set_gesture block="set status | left leg %o1| left feet %o2| right leg %o3| right feet %o4"
     //% o1.min=-90 o1.max=90
     //% o2.min=-90 o2.max=90
     //% o3.min=-90 o3.max=90
@@ -492,7 +492,7 @@ namespace sloth {
      * @param step ; eg: 1
      * @param speed ; eg: 50
      */
-    //% blockId=sloth_do_action block="%action=sloth_actions|%step|步数 %speed|速度"
+    //% blockId=sloth_do_action block="%action=sloth_actions|%step|step %speed|speed"
     //% weight=98 blockGap=50
     //% speed.min=1 speed.max=100
     export function do_action(action: number, step: number = 1, speed: number = 50): void {
@@ -592,7 +592,7 @@ namespace sloth {
     /**
      * Calibrate 4 servos by buttonA, buttonB, and A+B.
      */
-    //% blockId=sloth_cali_by_button block="校正"
+    //% blockId=sloth_cali_by_button block="correction"
     //% weight=45 blockGap=10
     export function cali_by_button(): void {
         basic.showString("Cali")//brate 4 servos by button A, B & A+B")
@@ -662,7 +662,7 @@ namespace sloth {
     /**
      * Volume of the mic get.
      */
-    //% blockId=sloth_volume_of_heard block="获取声音传感器值"
+    //% blockId=sloth_volume_of_heard block="get the value of sound sensor"
     //% weight=65 blockGap=10
     export function volume_of_heard(): number {
         let volume: number = 0
@@ -700,7 +700,7 @@ namespace sloth {
      * The event mic get voice more then the threshold.
      * @param threshold ; eg: 550
      */
-    //% blockId=sloth_mic_get_voice block="当听到声音时 |%threshold"
+    //% blockId=sloth_mic_get_voice block="when heard voice |%threshold"
     //% threshold.min=0 threshold.max=1023
     //% weight=70 blockGap=10
     export function onHeard(threshold: number = 550, handler: Action) {
@@ -721,7 +721,7 @@ namespace sloth {
     /**
      * IR detect obstacle: IR on digital pin 12, when detected, pin 12 is low
      **/
-    //% blockId=sloth_IR_detect_obstacle block="当检测到障碍物时"
+    //% blockId=sloth_IR_detect_obstacle block="when detect obstacle"
     //% weight=55 blockGap=50
     export function obstacle_detected(): boolean {
         if (pins.digitalReadPin(DigitalPin.P12) == 0)
@@ -733,7 +733,7 @@ namespace sloth {
     /**
      * servo sweep
      **/
-    //% blockId=sloth_servo_sweep block="扫描舵机"
+    //% blockId=sloth_servo_sweep block="scanning servo"
     //% weight=55
     export function servo_sweep(): void {
         let item = -90
